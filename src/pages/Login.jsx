@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 // import logo from '../assets/logo.png';
 // import background from '../assets/login.jpg';
-import { useNavigate } from 'react-router-dom';
-import BackgroundImage from '../components/BackgroundImage';
-import Header from '../components/Header';
-import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
-import { firebaseAuth } from '../utils/firebase-config';
+import { useNavigate } from "react-router-dom";
+import BackgroundImage from "../components/BackgroundImage";
+import Header from "../components/Header";
+import { onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { firebaseAuth } from "../utils/firebase-config";
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -22,7 +22,7 @@ function Login() {
   };
 
   onAuthStateChanged(firebaseAuth, (currentUser) => {
-    if (currentUser) navigate('/');
+    if (currentUser) navigate("/");
   });
 
   return (
