@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { BsArrowLeft } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import video from '../assets/homeTitle.webp';
+
 export default function Player() {
   const navigate = useNavigate();
 
