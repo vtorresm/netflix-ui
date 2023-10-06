@@ -2,9 +2,9 @@ import {
   configureStore,
   createAsyncThunk,
   createSlice,
-} from "@reduxjs/toolkit";
-import axios from "axios";
-import { API_KEY, TMDB_BASE_URL } from "../utils/constants";
+} from '@reduxjs/toolkit';
+import axios from 'axios';
+import { API_KEY, TMDB_BASE_URL } from '../utils/constants';
 
 const initialState = {
   movies: [],
@@ -12,7 +12,7 @@ const initialState = {
   genres: [],
 };
 
-export const getGenres = createAsyncThunk("netflix/genres", async () => {
+export const getGenres = createAsyncThunk('netflix/genres', async () => {
   const {
     data: { genres },
   } = await axios.get(
@@ -44,14 +44,14 @@ const getRawData = async (api, genres, paging = false) => {
   for (let i = 1; moviesArray.length < 60 && i < 10; i++) {
     const {
       data: { results },
-    } = await axios.get(`${api}${paging ? `&page=${i}` : ""}`);
+    } = await axios.get(`${api}${paging ? `&page=${i}` : ''}`);
     createArrayFromRawData(results, moviesArray, genres);
   }
   return moviesArray;
 };
 
 export const fetchDataByGenre = createAsyncThunk(
-  "netflix/genre",
+  'netflix/genre',
   async ({ genre, type }, thunkAPI) => {
     const {
       netflix: { genres },
@@ -64,7 +64,7 @@ export const fetchDataByGenre = createAsyncThunk(
 );
 
 export const fetchMovies = createAsyncThunk(
-  "netflix/trending",
+  'netflix/trending',
   async ({ type }, thunkAPI) => {
     const {
       netflix: { genres },
@@ -78,7 +78,7 @@ export const fetchMovies = createAsyncThunk(
 );
 
 export const getUsersLikedMovies = createAsyncThunk(
-  "netflix/getLiked",
+  'netflix/getLiked',
   async (email) => {
     const {
       data: { movies },
@@ -88,11 +88,11 @@ export const getUsersLikedMovies = createAsyncThunk(
 );
 
 export const removeMovieFromLiked = createAsyncThunk(
-  "netflix/deleteLiked",
+  'netflix/deleteLiked',
   async ({ movieId, email }) => {
     const {
       data: { movies },
-    } = await axios.put("http://localhost:5000/api/user/remove", {
+    } = await axios.put('http://localhost:5000/api/user/remove', {
       email,
       movieId,
     });
@@ -101,7 +101,7 @@ export const removeMovieFromLiked = createAsyncThunk(
 );
 
 const NetflixSlice = createSlice({
-  name: "Netflix",
+  name: 'Netflix',
   initialState,
   extraReducers: (builder) => {
     builder.addCase(getGenres.fulfilled, (state, action) => {
