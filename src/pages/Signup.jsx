@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import BackgroundImage from '../components/BackgroundImage';
 import Header from '../components/Header';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword,
+  onAuthStateChanged, } from 'firebase/auth';
 import { firebaseAuth } from '../utils/firebase-config';
 
 export default function Signup() {
@@ -11,16 +12,21 @@ export default function Signup() {
     email: '',
     password: '',
   });
+  const navigate = useNavigate();
 
-  const hadleSignIn = async () => {
+  const handleSignIn = async () => {
     try {
       const { email, password } = formValues;
-
       await createUserWithEmailAndPassword(firebaseAuth, email, password);
     } catch (error) {
       console.log(error);
     }
   };
+
+  onAuthStateChanged(firebaseAuth, (currentUser) => {
+    if (currentUser) navigate("/");
+  });
+
   return (
     <Container showPassword={showPassword}>
       <BackgroundImage />
@@ -36,36 +42,36 @@ export default function Signup() {
           </div>
           <div className='form'>
             <input
-              type='email'
-              placeholder='Email Address'
-              name='email'
-              value={formValues.email}
+              type="email"
+              placeholder="Email address"
               onChange={(e) =>
                 setFormValues({
                   ...formValues,
                   [e.target.name]: e.target.value,
                 })
               }
+              name="email"
+              value={formValues.email}
             />
             {showPassword && (
               <input
-                type='password'
-                placeholder='Password'
-                name='password'
-                value={formValues.password}
+                type="password"
+                placeholder="Password"
                 onChange={(e) =>
                   setFormValues({
                     ...formValues,
                     [e.target.name]: e.target.value,
                   })
                 }
+                name="password"
+                value={formValues.password}
               />
             )}
             {!showPassword && (
               <button onClick={() => setShowPassword(true)}>Get Started</button>
             )}
           </div>
-          <button onClick={hadleSignIn}>Sign Up</button>
+          {showPassword && <button onClick={handleSignIn}>Log In</button>}
         </div>
       </div>
     </Container>
@@ -131,3 +137,5 @@ const Container = styled.div`
     }
   }
 `;
+
+export default Signup;
