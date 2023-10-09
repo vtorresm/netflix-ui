@@ -11,13 +11,13 @@ export default function Header(props) {
         <img src={logo} alt='logo' />
       </div>
       <button onClick={() => navigate(props.login ? '/login' : '/signup')}>
-        {props.login ? 'Log In' : 'Sing In'}
+        {props.login ? 'Log In' : 'Sign In'}
       </button>
     </Container>
   );
 }
 
-const Container = styled.div`
+const Container = styled.header`
   padding: 0 4rem;
   .logo {
     img {
