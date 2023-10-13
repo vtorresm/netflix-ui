@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import { createUserWithEmailAndPassword,
   onAuthStateChanged, } from 'firebase/auth';
 import { firebaseAuth } from '../utils/firebase-config';
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup() {
   const [showPassword, setShowPassword] = useState(false);
@@ -138,4 +139,3 @@ const Container = styled.div`
   }
 `;
 
-export default Signup;
