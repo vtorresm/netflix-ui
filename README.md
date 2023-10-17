@@ -1,12 +1,12 @@
-# Aplicación de Películas
+# Aplicación de NETFLIX
 
-## UI NetFlix Clone
+## UI NETFLIX Clone
 
-# ![Aplicación de Peliculas](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/login.jpg?raw=true)
+# ![Login UI](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/login.jpg?raw=true)
 
-# ![Aplicación de Peliculas](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/signup.jpg?raw=true)
+# ![SignUp UI](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/signup.jpg?raw=true)
 
-# ![Aplicación de Peliculas](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/Portada.jpg?raw=true)
+# ![Portada NetFlix UI](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/Portada.jpg?raw=true)
 
 # Getting Started with Create React App
 
