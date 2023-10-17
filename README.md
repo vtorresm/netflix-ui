@@ -1,3 +1,13 @@
+# Aplicación de Películas
+
+## UI NetFlix Clone
+
+# ![Aplicación de Peliculas](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/login.jpg?raw=true)
+
+# ![Aplicación de Peliculas](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/signup.jpg?raw=true)
+
+# ![Aplicación de Peliculas](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/Portada.jpg?raw=true)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
