@@ -4,8 +4,10 @@
 
 # ![Login UI](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/login.jpg?raw=true)
 
+## SignUp UI NETFLIX Clone
 # ![SignUp UI](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/signup.jpg?raw=true)
 
+## Portada NETFLIX UI Clone
 # ![Portada NetFlix UI](https://github.com/vtorresm/netflix-ui/blob/main/src/assets/Portada.jpg?raw=true)
 
 # Getting Started with Create React App
